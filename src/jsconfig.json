@@ -1,0 +1,20 @@
+// {
+//   "compilerOptions": {
+//     "jsx": "react",
+//     "charset": "utf8",
+//     "target": "ES6",
+//     "baseUrl": "./",
+//     "allowSyntheticDefaultImports": true,
+//     "paths": {
+//       "@Actions/*": ["./actions/*"],
+//       "@Assets/*": ["./assets/*"],
+//       "@Components/*": ["./components/*"],
+//       "@Constants/*": ["./constants/*"],
+//       "@Http/*": ["./http/*"],
+//       "@Routes/*": ["./routes/*"],
+//       "@Services/*": ["./services/*"],
+//       "@Store/*": ["./store/*"],
+//       "@Stype/*": ["./styles/*"]
+//     }
+//   }
+// }

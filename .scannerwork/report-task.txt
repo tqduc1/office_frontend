@@ -1,0 +1,6 @@
+projectKey=office-management-frontend
+serverUrl=http://192.168.66.30:9002
+serverVersion=9.2.4.50792
+dashboardUrl=http://192.168.66.30:9002/dashboard?id=office-management-frontend
+ceTaskId=AX5sv4xl42k9RNLygDqx
+ceTaskUrl=http://192.168.66.30:9002/api/ce/task?id=AX5sv4xl42k9RNLygDqx

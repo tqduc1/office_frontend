@@ -1,0 +1,44 @@
+{
+  "nav": {
+    "office": "オフィス",
+    "setting": "セットアップ",
+    "report": "報告する",
+    "ticket": "Ticket",
+    "logout": "ログアウト",
+    "profile": "プロフィール"
+  },
+  "setting": {
+    "setting": "セットアップ",
+    "floorList": "フロアリスト",
+    "floor": "床",
+    "buildingList": "建物リスト",
+    "building": "建物",
+    "titleDelete": "確認してください",
+    "contentDeleteBuilding": "この建物を削除してもよろしいですか？",
+    "contentDeleteFloor": "このフロアを削除してもよろしいですか？",
+    "titleCreateBuilding": "建物を作成する",
+    "stt": "STT",
+    "name": "名前",
+    "address": "住所",
+    "noFloor": "No.Floor",
+    "noRoomDot": "No.Room Dot",
+    "noSeatDot": "No.Seat Dot",
+    "buildingName": "ビル名",
+    "noDot": "No.Dot",
+    "seatDot": "Seat Dot",
+    "meetingRoomDot": "Meeting Room Dot",
+    "backgroundFloor": "Background Foor"
+  },
+  "common": {
+    "save": "セーブ",
+    "update": "更新",
+    "cancel": "キャンセル",
+    "close": "選ぶ",
+    "create": "作成",
+    "confirm": "確認",
+    "enable": "有効",
+    "action": "アクション",
+    "edit": "編集",
+    "confirmEdit": "編集してよろしいですか？"
+  }
+}

@@ -1,0 +1,117 @@
+@import "./base.scss";
+$height: 55px;
+.header::before {
+  height: $height;
+  content: "";
+  width: 100%;
+  display: block;
+  z-index: 1;
+}
+
+.nav {
+  $color: rgba(0, 0, 0, 0.1);
+  background-color: $primary-color;
+  padding: 4px 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  height: $height;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  a:hover,
+  a:visited,
+  a:link,
+  a:active {
+    text-decoration: none;
+  }
+
+  .nav-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .logo {
+      align-items: center;
+      width: 100%;
+      img {
+        $hw: 35px;
+        width: $hw;
+        display: block;
+      }
+    }
+    .links {
+      display: flex;
+      margin-left: 20px;
+      .link {
+        color: $white;
+        display: inline-flex;
+        padding: 3px 15px 0 15px;
+        height: $height;
+        align-items: center;
+        text-align: center;
+        opacity: 0.7;
+        border-bottom: 3px solid transparent;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: $font-medium;
+        word-break: keep-all;
+        width: max-content;
+        white-space: normal;
+      }
+      :hover {
+        opacity: 1;
+      }
+      .link.active {
+        opacity: 1;
+        border-bottom: 3px solid #ff9500;
+      }
+    }
+  }
+  .nav-right {
+    display: flex;
+    .switch-lang {
+      margin-right: 20px;
+      color: #fff;
+      @media (max-width: 600px) {
+        display: none;
+      }
+      .ant-select {
+        color: #fff;
+        width: max-content;
+        .ant-select-selection-item {
+          display: flex;
+          align-items: center;
+          justify-content: end;
+          width: max-content;
+        }
+        .ant-select-arrow {
+          color: #fff;
+          .anticon:not(.ant-select-suffix) {
+            pointer-events: none;
+          }
+        }
+      }
+    }
+    align-items: center;
+    .chip-avatar {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      color: #fff;
+      .user-info {
+        padding: 0 7px;
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
+      .ant-avatar {
+        @media (max-width: 600px) {
+          display: none;
+        }
+      }
+    }
+  }
+}

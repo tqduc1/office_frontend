@@ -1,0 +1,22 @@
+
+# upload - http://localhost:9093
+
+version: '3.7'
+services:
+  office_frontend:
+    hostname: office_frontend
+    container_name: office_frontend
+    image: tdx-images/office-frontend:latest
+    environment:
+      - TZ=Asia/Ho_Chi_Minh
+    ports:
+      - "8080:8080"
+    # depends_on:
+    #   - config
+    # env_file:
+    #   - dev.env
+  #  logging:
+  #    driver: "json-file"
+  #    options:
+  #      max-size: "10m"
+  #      max-file: "3"

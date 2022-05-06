@@ -1,0 +1,181 @@
+.login-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6f6f6 !important;
+  overflow: hidden;
+  position: relative;
+  &::after {
+    content: "";
+    width: 650px;
+    height: 650px;
+    border-radius: 50%;
+    background-color: #40a9ff;
+    position: absolute;
+    top: -250px;
+    left: -290px;
+    box-shadow: #4093ff 0px 0px 0px 55px;
+  }
+  &::before {
+    content: "";
+    width: 650px;
+    height: 650px;
+    border-radius: 50%;
+    background-color: #40a9ff;
+    position: absolute;
+    bottom: -350px;
+    right: -290px;
+    box-shadow: #4093ff 0px 0px 0px 35px;
+  }
+  .login-body {
+    z-index: 99;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    height: 85vh;
+    width: 85vw;
+    background-color: #fff;
+    padding-top: 0;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+      rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+      rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    border-radius: 15px;
+    @media (max-width: 1020px) {
+      flex-wrap: wrap;
+      background-position: center;
+      background-size: cover;
+    }
+    @media (max-width: 760px) {
+      height: 100vh;
+      width: 100vw;
+      border-radius: 0px;
+    }
+    .login-form {
+      flex-basis: 45%;
+      height: 100%;
+      max-width: 45%;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      .ant-form-item {
+        margin-bottom: 10px !important;
+        padding: 2px;
+      }
+      .form-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+        margin-bottom: 20px;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        img {
+          width: 30%;
+          @media (max-width: 760px) {
+            width: 50%;
+          }
+        }
+        p {
+          font-weight: 700;
+          font-size: 20px;
+          margin-top: 10px;
+          margin-bottom: 0;
+          text-align: center;
+        }
+      }
+
+      .form-wapper {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        .form-item {
+          width: 80%;
+          @media (max-width: 760px) {
+            width: 100%;
+          }
+          .input {
+            font-size: 14px;
+            border-radius: 15px;
+            padding: 10px 15px;
+            height: auto !important;
+            box-sizing: border-box;
+            margin: 0;
+            position: relative;
+            width: 100%;
+            min-width: 0;
+            color: #000000d9;
+            line-height: 1.5715;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #d9d9d9;
+            transition: all 0.3s;
+            input:-webkit-autofill,
+            input:-webkit-autofill:hover,
+            input:-webkit-autofill:focus,
+            input:-webkit-autofill:active {
+              -webkit-box-shadow: 0 0 0 30px white inset !important;
+            }
+          }
+        }
+        .btn-primary {
+          background-color: #40a9ff !important;
+          border-color: #40a9ff !important;
+          border-radius: 15px !important;
+          width: 80%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 10px !important;
+          height: auto !important;
+          color: #fff;
+          line-height: normal !important;
+          margin-top: 20px !important;
+          box-shadow: rgba(24, 144, 255, 0.16) 0px 3px 6px,
+            rgba(24, 144, 255, 0.23) 0px 3px 6px;
+          font-weight: 600;
+          @media (max-width: 760px) {
+            width: 100%;
+          }
+        }
+      }
+      @media (max-width: 1400px) {
+        flex-basis: 50%;
+        max-width: 50%;
+      }
+      @media (max-width: 1020px) {
+        flex-basis: 100%;
+        max-width: 100%;
+      }
+    }
+    .login-bg {
+      flex-basis: 55%;
+      max-width: 55%;
+      height: 100%;
+      background: url("../../assets/image/bg.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: red;
+      border-radius: 0px 15px 15px 0;
+      @media (max-width: 1400px) {
+        flex-basis: 50%;
+        max-width: 50%;
+      }
+      @media (max-width: 1020px) {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,796 @@
+@charset 'UTF-8';
+
+@import "./base.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  font-size: 12px;
+  line-height: 1.42857143;
+  background-color: #f4f5f7 !important;
+  color: rgba(0, 0, 0, 0.85);
+  overflow-x: hidden;
+  font-family: "SFPro", "Roboto", "Segoe UI", Arial, Helvetica, sans-serif;
+  font-weight: $font-normal;
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+#app {
+  height: 100%;
+  height: auto;
+  min-height: 100vh;
+}
+
+.app-container {
+  height: 100vh;
+  background-color: #fff;
+}
+
+.layout-container {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+.main {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  height: calc(100vh - 55px);
+}
+
+.ant-popover-arrow-content {
+  background: none !important;
+}
+.bg-light {
+  height: 100%;
+}
+.dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  button {
+    display: flex;
+    align-items: center;
+    &:hover {
+      background-color: #dddddd;
+    }
+  }
+}
+
+.screen {
+  height: 100%;
+}
+.no-margin-bottom {
+  margin-bottom: 0 !important;
+}
+
+.button-drag-container {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+.button-drag {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: none;
+  .cicrle {
+    background-color: #36b37e;
+    width: 15px;
+    height: 15px;
+    min-width: 15px;
+    border-radius: 50%;
+  }
+  .square {
+    background-color: #36b37e;
+    width: 15px;
+    height: 15px;
+    min-width: 15px;
+  }
+}
+.cicrle {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background-color: #36b37e;
+  width: 8px;
+  height: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 8px;
+  border-radius: 50%;
+  &.disable {
+    background-color: #6b778c !important;
+  }
+  &.selected {
+    &.available {
+      &::before {
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 1px solid #36b37e;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+          rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+          rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+      }
+    }
+    &.booked {
+      &::before {
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 1px solid #0065ff;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+          rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+          rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+      }
+    }
+    &.allocated {
+      &::before {
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 1px solid #ffab00;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+          rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+          rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+      }
+    }
+    &.occupied {
+      &::before {
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 1px solid #ff5630;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+          rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+          rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+      }
+    }
+    &.your-seats {
+      &::before {
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 1px solid #5243aa;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+          rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+          rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+      }
+    }
+  }
+  &.available {
+    background-color: #36b37e;
+  }
+  &.booked {
+    background-color: #0065ff;
+  }
+  &.allocated {
+    background-color: #ffab00;
+  }
+  &.occupied {
+    background-color: #ff5630;
+  }
+  &.your-seats {
+    background-color: #5243aa;
+  }
+}
+
+.square {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background-color: #36b37e;
+  width: 8px;
+  height: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 8px;
+  &.disable {
+    background-color: #6b778c !important;
+  }
+  &.selected {
+    &.available {
+      &::before {
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border: 1px solid #36b37e;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+          rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+          rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+      }
+    }
+    &.booked {
+      &::before {
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border: 1px solid #0065ff;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+          rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+          rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+      }
+    }
+    &.allocated {
+      &::before {
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border: 1px solid #ffab00;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+          rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+          rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+      }
+    }
+    &.occupied {
+      &::before {
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border: 1px solid #ff5630;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+          rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+          rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+      }
+    }
+    &.your-seats {
+      &::before {
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border: 1px solid #5243aa;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+          rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+          rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+      }
+    }
+  }
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.6);
+  z-index: 100;
+  .loader {
+    --path: #2f3545;
+    --dot: #5628ee;
+    --duration: 3s;
+    width: 44px;
+    height: 44px;
+    position: relative;
+    &:before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      position: absolute;
+      display: block;
+      background: var(--dot);
+      top: 37px;
+      left: 19px;
+      transform: translate(-18px, -18px);
+      animation: dotRect var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86)
+        infinite;
+    }
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      rect,
+      polygon,
+      circle {
+        fill: none;
+        stroke: var(--path);
+        stroke-width: 10px;
+        stroke-linejoin: round;
+        stroke-linecap: round;
+      }
+      polygon {
+        stroke-dasharray: 145 calc(221 - 145) 145 calc(221 - 145);
+        stroke-dashoffset: 0;
+        animation: pathTriangle var(--duration)
+          cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+      }
+      rect {
+        stroke-dasharray: calc(256 / 4 * 3) calc(256 / 4) calc(256 / 4 * 3)
+          calc(256 / 4);
+        stroke-dashoffset: 0;
+        animation: pathRect 3s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+      }
+      circle {
+        stroke-dasharray: calc(200 / 4 * 3) calc(200 / 4) calc(200 / 4 * 3)
+          calc(200 / 4);
+        stroke-dashoffset: 75;
+        animation: pathCircle var(--duration)
+          cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+      }
+    }
+    &.triangle {
+      width: 48px;
+      &:before {
+        left: 21px;
+        transform: translate(-10px, -18px);
+        animation: dotTriangle var(--duration)
+          cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+      }
+    }
+  }
+
+  @keyframes pathTriangle {
+    33% {
+      stroke-dashoffset: 74;
+    }
+    66% {
+      stroke-dashoffset: 147;
+    }
+    100% {
+      stroke-dashoffset: 221;
+    }
+  }
+
+  @keyframes dotTriangle {
+    33% {
+      transform: translate(0, 0);
+    }
+    66% {
+      transform: translate(10px, -18px);
+    }
+    100% {
+      transform: translate(-10px, -18px);
+    }
+  }
+
+  @keyframes pathRect {
+    25% {
+      stroke-dashoffset: 64;
+    }
+    50% {
+      stroke-dashoffset: 128;
+    }
+    75% {
+      stroke-dashoffset: 192;
+    }
+    100% {
+      stroke-dashoffset: 256;
+    }
+  }
+
+  @keyframes dotRect {
+    25% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(18px, -18px);
+    }
+    75% {
+      transform: translate(0, -36px);
+    }
+    100% {
+      transform: translate(-18px, -18px);
+    }
+  }
+
+  @keyframes pathCircle {
+    25% {
+      stroke-dashoffset: 125;
+    }
+    50% {
+      stroke-dashoffset: 175;
+    }
+    75% {
+      stroke-dashoffset: 225;
+    }
+    100% {
+      stroke-dashoffset: 275;
+    }
+  }
+
+  .loader {
+    display: inline-block;
+    margin: 0 16px;
+  }
+}
+
+.search-wapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popup-menu {
+  width: 150px;
+  z-index: 2;
+  padding: 0 !important;
+}
+.popup-menu-office {
+  width: auto;
+  z-index: 2;
+  padding: 0 !important;
+  border-radius: 8px;
+  .title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    h3 {
+      margin-bottom: 0;
+      font-weight: $font-medium;
+      font-size: 20px;
+      line-height: 24px;
+    }
+    .icon {
+      width: 18px;
+      height: 18px;
+      margin-left: 30px;
+      &.circle {
+        border-radius: 50%;
+      }
+      &.available {
+        background-color: #36b37e;
+      }
+      &.booked {
+        background-color: #0065ff;
+      }
+      &.allocated {
+        background-color: #ffab00;
+      }
+      &.occupied {
+        background-color: #ff5630;
+      }
+      &.your-seats {
+        background-color: #5243aa;
+      }
+    }
+  }
+  .content {
+    margin-top: 10px;
+    p {
+      font-weight: $font-normal;
+      font-size: 14px;
+      line-height: 20px;
+      span {
+        font-weight: 600;
+      }
+    }
+
+    .ant-input,
+    .ant-select {
+      margin-bottom: 10px;
+    }
+    .ant-picker {
+      input {
+        font-size: 12px;
+        color: #000;
+      }
+    }
+    .group-btn {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
+}
+
+.ant-pagination-item-active {
+  font-weight: $font-medium;
+  background: #253858;
+  border-color: #253858;
+  a {
+    color: #fff;
+  }
+}
+
+.pagination {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 15px 20px;
+  .ant-pagination-item-active {
+    font-weight: $font-medium;
+    background: #001529;
+    border-color: #001529;
+    a {
+      color: #fff;
+    }
+  }
+  .ant-pagination-item:focus-visible,
+  .ant-pagination-item:hover {
+    border-color: #001529;
+    transition: all 0.3s;
+  }
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+  .number-record {
+    position: absolute;
+    right: 20px;
+    @media (max-width: 600px) {
+      margin-top: 15px;
+      position: relative;
+      right: 0;
+    }
+  }
+}
+
+// .available {
+//   background-color: #36b37e !important;
+//   color: #fff;
+// }
+// .booked {
+//   background-color: #0065ff !important;
+//   color: #fff;
+// }
+// .allocated {
+//   background-color: #ffab00 !important;
+//   color: #fff;
+// }
+// .occupied {
+//   background-color: #ff5630 !important;
+//   color: #fff;
+// }
+// .your-seats {
+//   background-color: #5243aa !important;
+//   color: #fff;
+// }
+
+.filter-wapper {
+  width: 100%;
+  .filter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    .filter-item {
+      flex-basis: 10%;
+      margin-right: 10px;
+      max-width: 10%;
+      overflow: hidden;
+      &.big {
+        flex-basis: 20%;
+        margin-right: 10px;
+        max-width: 20%;
+        overflow: hidden;
+      }
+      .ant-select-selection-overflow {
+        position: relative;
+        display: flex;
+        flex: auto;
+        flex-wrap: nowrap !important;
+        overflow: hidden !important;
+        max-width: 100%;
+        .ant-select-selection-overflow-item {
+          &.ant-select-selection-overflow-item-suffix {
+            width: min-content;
+            overflow: hidden;
+          }
+          .ant-select-multiple {
+            &.ant-select-selection-search {
+              overflow: hidden;
+              width: 100% !important;
+            }
+          }
+        }
+      }
+      .ant-picker {
+        .ant-picker-input {
+          input {
+            font-size: 12px;
+            padding: 2px 11px;
+          }
+        }
+      }
+      @media (max-width: 1300px) {
+        flex-basis: 20%;
+        margin-bottom: 10px;
+        max-width: 20%;
+      }
+      @media (max-width: 600px) {
+        flex-basis: 23%;
+        margin-bottom: 10px;
+        max-width: 23%;
+      }
+
+      &:last-child {
+        flex-basis: 15%;
+        display: flex;
+        @media (max-width: 1300px) {
+          margin-top: 0px;
+          flex-basis: auto;
+          // mã
+        }
+        @media (max-width: 1023px) {
+          margin-top: 0;
+          margin-bottom: 10px;
+          padding: 0;
+          button {
+            padding: 10px;
+            display: flex;
+            align-items: center;
+          }
+        }
+        @media (max-width: 600px) {
+          display: none;
+        }
+      }
+    }
+    @media (max-width: 600px) {
+      width: 650px;
+      overflow: auto;
+    }
+  }
+  @media (max-width: 1300px) {
+    width: 85%;
+  }
+  @media (max-width: 600px) {
+    width: 60%;
+    overflow: auto;
+    position: relative;
+  }
+}
+.filter-item-mobile {
+  display: none;
+
+  @media (max-width: 600px) {
+    display: flex;
+    position: absolute;
+    right: 10px;
+    top: 52px;
+  }
+}
+$animationTime: 2s;
+
+.ant-divider-horizontal {
+  @media (max-width: 1300px) {
+    margin: 10px 0 20px 0;
+  }
+}
+
+.not-allowed-container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // background: linear-gradient(to bottom right, #eee, #aaa);
+  h1 {
+    margin: 40px 0 20px;
+  }
+  .lock {
+    border-radius: 5px;
+    width: 55px;
+    height: 45px;
+    background-color: #333;
+    position: relative;
+    animation: dip 1s;
+    animation-delay: ($animationTime - 0.5);
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      border-left: 5px solid #333;
+      height: 20px;
+      width: 35px;
+      left: 10px;
+    }
+
+    &::before {
+      top: -30px;
+      border: 5px solid #333;
+      border-bottom-color: transparent;
+      border-radius: 15px 15px 0 0;
+      height: 30px;
+      animation: lock $animationTime, spin $animationTime;
+    }
+
+    &::after {
+      top: -10px;
+      border-right: 5px solid transparent;
+      animation: spin $animationTime;
+    }
+  }
+
+  @keyframes lock {
+    0% {
+      top: -45px;
+    }
+    65% {
+      top: -45px;
+    }
+    100% {
+      top: -30px;
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: scaleX(-1);
+      left: -20px;
+    }
+    65% {
+      transform: scaleX(1);
+      left: 10px;
+    }
+  }
+
+  @keyframes dip {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+}
+
+.ant-form-item-required {
+  &::before {
+    display: none !important;
+  }
+  &::after {
+    display: inline-block !important;
+    margin-left: 4px !important;
+    color: #ff4d4f;
+    font-size: 14px;
+    font-family: SimSun, sans-serif;
+    line-height: 1;
+    content: "*" !important;
+  }
+  // color: #0065ff !important;
+}
+
+@import "../login/_login.scss";
+@import "../common/nav.scss";
+@import "../setting/setting.scss";
+@import "../office/office.scss";
+@import "../ticket/ticket";
+@import "../report/report";

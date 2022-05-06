@@ -1,0 +1,108 @@
+.ticket-container {
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  position: relative;
+  .group-action-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  .list-body {
+    margin-top: 10px;
+    position: relative;
+    overflow: auto;
+    background-color: #fff;
+    .ant-checkbox-group {
+      width: 100%;
+    }
+    .table-container {
+      overflow: auto;
+
+      .table {
+        width: 100%;
+        text-align: left;
+        background-color: #ebecf0;
+        border-bottom: 1px solid #f0f0f0;
+        thead {
+          display: block;
+          overflow: hidden;
+          width: calc(100% - 6px);
+          tr {
+            width: 100%;
+            display: table;
+            table-layout: fixed;
+            th {
+              background-color: #ebecf0;
+              font-size: 12px;
+              position: relative;
+              padding: 15px 8px;
+              &:not(:first-child):not(:last-child)::before {
+                position: absolute;
+                top: 50%;
+                right: 0;
+                width: 1px;
+                height: 1.6em;
+                background-color: rgba(0, 0, 0, 0.06);
+                transform: translateY(-50%);
+                transition: background-color 0.3s;
+                content: "";
+              }
+            }
+          }
+        }
+        tbody {
+          display: block;
+          overflow-y: scroll;
+          max-height: 55vh;
+          background-color: #fff;
+          width: 100%;
+          &.body-sx {
+            max-height: 65vh;
+          }
+          tr {
+            width: 100%;
+            display: table;
+            table-layout: fixed;
+            td {
+              font-size: 12px;
+              // border: 1px solid red;
+              border-bottom: 1px solid #f0f0f0;
+              padding: 8px 8px;
+            }
+
+            &:hover {
+              background-color: #f0f0f0;
+              cursor: pointer;
+            }
+          }
+          &::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px #ebecf0;
+            background-color: #ebecf0;
+          }
+
+          &::-webkit-scrollbar {
+            width: 6px;
+            background-color: #ebecf0;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background-color: #42526e;
+          }
+        }
+
+        @media (max-width: 1200px) {
+          width: 1920px;
+        }
+        .ant-pagination-item-active {
+          font-weight: $font-medium;
+          background: #253858;
+          border-color: #253858;
+          a {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
